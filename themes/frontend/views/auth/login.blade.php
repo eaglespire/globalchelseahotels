@@ -3,7 +3,7 @@
 @section('content')
 
 <section>
-    <h3 class="font-bold text-2xl">Welcome to Back</h3>
+    <h3 class="font-bold text-2xl">Welcome Back</h3>
     <p class="text-gray-600 pt-2">Sign in to your account.</p>
 </section>
 

@@ -26,7 +26,7 @@
                 <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">News</a>
                 <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ $post->title }}</a>
                 <p href="#" class="text-sm pb-8">
-                    By <a href="#" class="font-semibold hover:text-gray-800">Admin</a>, Published on {{ $post->created_at }}
+                    By <a href="#" class="font-semibold hover:text-gray-800">Admin</a>, Published on {{ $post->created_at->diffForHumans() }}
                 </p>
 
                 <p>
@@ -66,7 +66,7 @@
             @endif
         </div>
 
-       
+
 
     </section>
 
@@ -75,7 +75,9 @@
 
         <div class="w-full bg-white shadow flex flex-col my-4 p-6">
             <p class="text-xl font-semibold pb-5">About Us</p>
-            <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+            <p class="pb-2">
+                Global Chelsea Hotel is the perfect place for your accommodation, as we are committed to bringing you the best in hospitality. The hotel is located conveniently in a great neighborhood so that you can enjoy your stay at our place. We have rooms with full amenities that allow for a comfortable stay.
+            </p>
             <a href="{{ route('about') }}" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
                 Get to know us
             </a>
@@ -88,7 +90,7 @@
                 <a href="{{ route('rooms.show', $room->id) }}">
                 <img class="hover:opacity-75" src="{{ $room->image }}">
                 </a>
-                
+
             @endforeach
             </div>
             <a href="{{ route('rooms') }}" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
@@ -108,7 +110,7 @@
             @foreach($latestPosts as $post)
             <div class="w-full max-w-xs text-center">
             <a href="{{ route('posts.show', $post->id) }}">
-            
+
                 <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="{{ $post->image }}" alt="avatar" />
 
                 <div class="mt-2">
@@ -117,10 +119,10 @@
                 </div>
             </a>
             </div>
-                
+
             @endforeach
 
-           
+
         </div>
     </div>
 </section>

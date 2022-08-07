@@ -1,9 +1,9 @@
-<div class="booking">
+<div class="booking" style="margin-top: -100px !important;">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="booking_title text-center">
-                    <h2 class="font-semibold text-4xl">Our Room</h2>
+                    <h2 class="font-semibold text-4xl">Our Rooms</h2>
                 </div>
                 <div class="booking_text text-center">
                     <p>

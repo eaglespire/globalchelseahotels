@@ -32,7 +32,7 @@ Route::get('/invoice/{bookingId}', [InvoiceController::class, 'index'])->name('i
 Route::post('/book', [BookController::class, 'store'])->name('book.store');
 Route::post('/newsletter', [NewsLetterController::class, 'store'])->name('newsletter.store');
 Route::group(['middleware' => 'session.exist'],  function() {
-    
+
     Route::get('/book', [BookController::class, 'index'])->name('book');
     Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.book');
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
@@ -46,6 +46,10 @@ Route::group(['middleware' => 'session.exist'],  function() {
 
 Route::get('/artisan', function(){
     \Artisan::call("storage:link");
+    return "success";
+});
+Route::get('/config-cache', function(){
+    \Artisan::call("config:cache");
     return "success";
 });
 

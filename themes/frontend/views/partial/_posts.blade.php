@@ -1,6 +1,6 @@
  <div class="blog mb-20">
-     <div class="booking_title text-center">
-         <h2 class="h1"> SEMI SUITE </h2>
+     <div class="booking_title text-center mt-2">
+         <h2 class="h1">News</h2>
      </div>
      <div class="blog_slider_container">
          <div class="owl-carousel owl-theme blog_slider">

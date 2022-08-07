@@ -21,7 +21,7 @@
                     <li class="{{ request()->is('contact-us') ? 'active' : '' }}"><a class="" href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </nav>
-            <div class="book_button"><a href=""> Quick Bookings </a></div>
+            <div class="book_button"><a href="{{ route('rooms') }}"> Quick Bookings </a></div>
             <div class="header_phone d-flex flex-row align-items-center justify-content-center">
                 <img src="/images/xphone.png.pagespeed.ic.bcttyGCy-j.png" alt="">
                 <span> +234 803-218-7719 </span>
@@ -42,14 +42,14 @@
                 <li class="{{ request()->is('about-us') ? 'active' : '' }}"><a href="{{ route('about') }}">About us</a></li>
                 <li class="{{ request()->is('our-rooms') ? 'active' : '' }}"><a href="{{ route('rooms') }}">Rooms</a></li>
                 <li class="{{ request()->is('services') ? 'active' : '' }}"><a href="{{ route('services') }}"> Services </a></li>
-                <li class="{{ request()->is('posts') ? 'active' : '' }}"><a href="{{ route('posts') }}"> Resources </a></li>
+                <li class="{{ request()->is('posts') ? 'active' : '' }}"><a href="{{ route('posts') }}"> Blog </a></li>
                 <li class="{{ request()->is('contact-us') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
 
             </ul>
         </nav>
     </div>
     <div class="menu_extra">
-        <div class="menu_book text-right"><a href="#"> Quick Bookings </a></div>
+        <div class="menu_book text-right"><a href="{{ route('rooms') }}"> Quick Bookings </a></div>
         <div class="menu_phone d-flex flex-row align-items-center justify-content-center">
             <img src="/images/xphone-2.png.pagespeed.ic.yPnh2CgxgD.png" alt="">
             <span> +234 803-218-7719 </span>

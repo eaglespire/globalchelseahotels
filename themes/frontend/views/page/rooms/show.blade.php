@@ -73,7 +73,7 @@
 
     <!-- Sidebar Section -->
     <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
-{{-- 
+{{--
         <div class="w-full bg-white shadow flex flex-col my-4 p-6">
             <p class="text-xl font-semibold pb-5">About Us</p>
             <p class="pb-2">{!! \Str::limit($about->content, 210) !!}</p>
@@ -82,7 +82,45 @@
             </a>
         </div> --}}
 
-        <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+        <div class="card card-body  my-lg-0 w-full bg-dark shadow flex flex-col my-4 p-6">
+            <h2 class="card-title text-white text-center font-weight-bold">Book this room</h2>
+            <form action="{{ route('book.store') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label class="text-white font-bold">Check in</label>
+                    <input type="date" name="check_in_date" style="opacity: 0.5; color: #000" class=" booking_input booking_input_a booking_in" placeholder="{{ date('Y-m-d') }}" min="{{ date('Y-m-d') }}" required>
+                    @error('check_in_date')
+                    <p class="text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label class="text-white font-bold">Check out</label>
+                    <input type="date" name="check_out_date" style="opacity: 0.5; color: #000" class=" booking_input booking_input_a booking_out" placeholder="{{ date('Y-m-d') }}" min="{{ date('Y-m-d') }}" required>
+                    @error('check_out_date')
+                    <p class="text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label class="text-white font-bold">Adult</label>
+                    <input type="number" placeholder="No of Adult" min="1" name="no_of_adult" style="opacity: 0.5; color: #000" class="booking_input booking_input_b" placeholder="Children" required>
+                    @error('no_of_adult')
+                    <p class="text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label class="text-white font-bold">Children</label>
+                    <input type="number" min="1" placeholder="No of Children" name="no_of_children" style="opacity: 0.5; color: #000" class="booking_input booking_input_b" placeholder="Room" required>
+                    @error('no_of_children')
+                    <p class="text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+                <input type="hidden" name="rooms[]" value="{{$room->id}}">
+                <button type="submit" class="w-full bg-yellow-600 text-dark font-bold text-sm uppercase rounded hover:bg-blue-500 flex items-center justify-center px-2 py-3 mt-6">Book Now</button>
+            </form>
+        </div>
+        <div class="w-full bg-dark shadow flex flex-col my-4 p-6">
             <p class="text-xl font-semibold pb-5">Our rooms</p>
             <div class="grid grid-cols-3 gap-3">
                 @foreach($rooms as $room)
@@ -92,7 +130,7 @@
 
                 @endforeach
             </div>
-            <a href="{{ route('rooms') }}" class="w-full bg-yellow-600 text-white font-bold text-sm uppercase rounded hover:bg-blue-500 flex items-center justify-center px-2 py-3 mt-6">
+            <a href="{{ route('rooms') }}" class="w-full bg-yellow-600 text-dark font-bold text-sm uppercase rounded hover:bg-blue-500 flex items-center justify-center px-2 py-3 mt-6">
                 View more
             </a>
         </div>

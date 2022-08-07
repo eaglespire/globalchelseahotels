@@ -1,11 +1,10 @@
-    <div class="features">
+    <div class="features" style="margin-top: -100px !important;">
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-12 icon_box_col">
                     <div class="icon_box d-flex flex-column align-items-center justify-content-start text-center">
                         <div class="icon_box_icon">
-                            <img src="images/icon_1.svg" class="svg" alt="">
+                            <img src="/images/icon_1.svg" class="svg" alt="">
                         </div>
                         <div class="icon_box_title">
                             <h2 class="h1"> Welcome to Global Chelsea Hotel </h2>

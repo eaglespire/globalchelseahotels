@@ -25,7 +25,7 @@
                      <img src="{{ $gallery->image }}" alt="">
                  </a>
                 @endforeach
-               
+
          </div>
      </div>
  </section>

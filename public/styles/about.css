@@ -121,7 +121,7 @@ p a:hover::after
 }
 p::selection
 {
-	
+
 }
 h1{font-size: 48px;}
 h2{font-size: 36px;}
@@ -138,14 +138,14 @@ h1, h2, h3, h4, h5, h6
 	color: #393939;
 	font-weight: 600;
 }
-h1::selection, 
-h2::selection, 
-h3::selection, 
-h4::selection, 
-h5::selection, 
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
 h6::selection
 {
-	
+
 }
 img
 {
@@ -628,7 +628,7 @@ section
 }
 .booking_input_a
 {
-	
+
 }
 .booking_input_b
 {
@@ -638,9 +638,9 @@ section
 	-o-appearance: none;
 	appearance: none;
 }
-input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button
-{ 
+{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	-ms-appearance: none;
@@ -664,9 +664,9 @@ input[type=number]::-webkit-outer-spin-button
 	font-size: 14px !important;
 	font-weight: 500 !important;
 	color: #FFFFFF !important;
-} 
+}
 .booking_input:-ms-input-placeholder
-{ 
+{
 	font-size: 14px !important;
 	font-weight: 500 !important;
 	color: #FFFFFF !important;
@@ -1017,9 +1017,9 @@ input[type=number]::-webkit-outer-spin-button
 	font-size: 15px !important;
 	font-weight: 500 !important;
 	color: #6d6d6d !important;
-} 
+}
 .newsletter_input:-ms-input-placeholder
-{ 
+{
 	font-size: 15px !important;
 	font-weight: 500 !important;
 	color: #6d6d6d !important;
@@ -1141,7 +1141,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 1380px)
 {
-	
+
 }
 
 /************
@@ -1150,7 +1150,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 1280px)
 {
-	
+
 }
 
 /************
@@ -1264,7 +1264,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 1100px)
 {
-	
+
 }
 
 /************
@@ -1273,7 +1273,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 1024px)
 {
-	
+
 }
 
 /************
@@ -1300,7 +1300,7 @@ input[type=number]::-webkit-outer-spin-button
 	}
 	.booking_input_container > div
 	{
-		
+
 	}
 	.booking_input_container > div:first-child,
 	.booking_input_container > div:nth-child(2)
@@ -1344,7 +1344,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 959px)
 {
-	
+
 }
 
 /************
@@ -1353,7 +1353,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 880px)
 {
-	
+
 }
 
 /************
@@ -1362,7 +1362,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 768px)
 {
-	
+
 }
 
 /************
@@ -1464,7 +1464,7 @@ input[type=number]::-webkit-outer-spin-button
 	{
 		height: 70px;
 	}
-	
+
 	.home
 	{
 		height: 480px;
@@ -1520,7 +1520,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 539px)
 {
-	
+
 }
 
 /************
@@ -1529,7 +1529,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 480px)
 {
-	
+
 }
 
 /************
@@ -1538,7 +1538,7 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 479px)
 {
-	
+
 }
 
 /************
@@ -1547,5 +1547,5 @@ input[type=number]::-webkit-outer-spin-button
 
 @media only screen and (max-width: 400px)
 {
-	
+
 }
