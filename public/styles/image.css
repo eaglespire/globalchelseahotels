@@ -1,0 +1,22 @@
+.gallery{
+    margin: 10px 50px;
+}
+
+.gallery img{
+    transition: 1s;
+    padding: 15px;
+    width:30%;
+}
+
+.gallery img:hover{
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:992px) {
+    .gallery img{
+        transition: 1s;
+        padding: 15px;
+        width:114%;
+    }
+}

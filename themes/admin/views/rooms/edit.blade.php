@@ -1,0 +1,162 @@
+@extends('layouts.app')
+
+@section('title', 'Edit Rooms')
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{ asset('backend/vendor/jquery-nice-select/nice-select.css') }}">
+@endsection
+
+@section('content')
+<section class="py-5">
+    <div class="mb-4">
+        <h5 class="title-heading d-inline-block float-left">Edit Room</h5>
+        <a href="{{ route('admin.room') }}" class="btn btn-primary float-right rounded"><i class="fas fa-angle-left fa-sm mr-2 text-gray-100"></i> Back</a>
+        <div class="clearfix"></div>
+    </div>
+
+    {{-- form --}}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h6 mb-0">Edit Room</h3>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" enctype="multipart/form-data" method="post" action="{{ route('admin.room.update', $room->id) }}">
+                @csrf
+                @method('put')
+                <div class="form-group row mb-4">
+                    <label class="col-md-3 col-form-label" for="room name">Room Name: <sup class="text-danger">*</sup></label>
+
+                    <div class="col-md-9">
+                        <input type="text" class="form-control bg-white" name="name" id="roomno" placeholder="Room Name" value="{{ $room->name }}">
+                        @error('name')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label class="col-md-3 col-form-label" for="room name">Room No: <sup class="text-danger">*</sup></label>
+
+                    <div class="col-md-9">
+                        <input type="text" class="form-control bg-white" name="room_no" id="roomno" placeholder="Room No" value="{{ $room->room_no }}">
+                        @error('room_no')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <div class="form-group row mb-4">
+                    <label class="col-md-3 col-form-label" for="room price">Room price: <sup class="text-danger">*</sup></label>
+                    <div class="col-md-9">
+                        <input type="number" class="form-control bg-white" name="price" id="roomno" placeholder="{!! $room->price !!}" value="{{ (float) str_replace(',', '',$room->price) }}">
+
+                        @error('price')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label class="col-md-3 col-form-label" for="room description">Description: <sup class="text-danger">*</sup></label>
+
+                    <div class="col-md-9">
+                        <textarea type="text" class="form-control bg-white" name="description" id="editor" placeholder="Type here..." value="{{ $room->description }}">
+                        {{ $room->description }}
+                        </textarea>
+                        @error('description')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <div class="form-group row mb-4">
+                    <label class="col-md-3 col-form-label" for="roomtype_id">Room status: <sup class="text-danger">*</sup></label>
+
+                    <div class="col-md-9">
+
+                        <select class="form-control nice-select wide" id="roomtype_id" name="status">
+                            @if ($room->status == 'avaliable')
+                            <option value="avaliable" selected="">Avaliable</option>
+                            <option value="unavaliable">Unavaliable</option>
+                            @elseif($room->status == 'unavaliable')
+                            <option value="unavaliable" selected="">Unavaliable</option>
+                            <option value="avaliable">Avaliable</option>
+                            @else
+                            <option value="">Select Room Status</option>
+                            <option value="avaliable">Avaliable</option>
+                            <option value="unavaliable">Unavaliable</option>
+                            @endif
+                        </select>
+
+                        @error('status')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label class="col-md-3 col-form-label" for="roomno">No of Person: <sup class="text-danger">*</sup></label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" name="no_of_people" id="to" value="{{ $room->no_of_people }}" min="1" max="10">
+                        @error('no_of_people')
+
+
+                        <div class="error-message text-danger pl-1 mt-1">
+                            <small>{{ $message }}</small>
+                        </div>
+                        @enderror
+
+                    </div>
+                    <label class="col-md-2 col-form-label" for="to">No of Beds: <sup class="text-danger">*</sup></label>
+                    <div class="col-md-3">
+
+                        <div class="input-group">
+                            <input type="number" class="form-control" name="no_of_bed" id="to" value="{{ $room->no_of_bed }}" min="1" max="10">
+
+                            <div class="input-group-append">
+                                <span class="input-group-text">Beds</span>
+                            </div>
+                        </div>
+
+                        @error('no_of_bed')
+
+                        <div class="error-message text-danger pl-1 mt-1">
+                            <small>{{ $message }}</small>
+                        </div>
+                        @enderror
+
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label class="col-md-3 col-form-label" for="roomtype_id">Room picture: <sup class="text-danger">*</sup></label>
+
+                    <div class="col-md-9">
+
+
+                        <input type="file" class="form-control bg-white" name="image" id="roomno" value="{{ old('image') }}">
+
+
+                        @error('image')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <div class="form-group row mt-5">
+                    <div class="col-md-9 ml-auto">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</section>
+
+
+@endsection

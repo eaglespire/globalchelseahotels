@@ -1,0 +1,5 @@
+/**
+ * Javascript
+ */
+
+require("alpinejs");
